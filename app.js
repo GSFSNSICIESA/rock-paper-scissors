@@ -1,49 +1,35 @@
-
-let choices = ['rock', 'paper', "scissors"]
-// let playerChoice =  prompt("choose:", "" )
+let choices = ['rock', 'paper', 'scissors'];
 function getComputerChoice(){
-    const computerChoice = choices[Math.floor(Math.random()*3)];
-    return computerChoice;
+    computerChoice = choices[Math.floor(Math.random()*3)];
+    return computerChoice;    
 }
-// function getPlayerChoice(){
-//     let playerChoice =  prompt("choose:", "" )
-//     return playerChoice;
-// }
-// getPlayerChoice();
-// getComputerChoice();
+function playRound(playerSelection, computerSelection){
+    if(playerSelection == computerSelection){
+        console.log('draw')
+    }else if(playerSelection == 'rock'){
 
+            if(computerSelection == 'paper'){
+                console.log('you lose!')
+            }else{
+                console.log('you win!')
+            }
+    }else if(playerSelection == 'paper'){
+        if(computerSelection== 'scissors'){
+            console.log('you lose!');
 
-function playRound(playerSelection, computerSelection) {
-        if (playerSelection == computerSelection){
-        console.log("draw")
-    }else{
-        if(playerSelection == "rock"){
-            if(computerSelection == "Paper"){
-                console.log("you lose!")
-            }else{
-                console.log("you win!")
-            }
-    
+        }else{
+            console.log('you win!')
         }
-        if(playerSelection == "paper"){
-            if(computerSelection == "Scissors"){
-                console.log("you lose!")
-            }else{
-                console.log("you win!")
-            }
-    
+        
+    }else if (playerSelection =='scissors'){
+        if (computerSelection == "rock"){
+            console.log('you lose!')
+        }else{
+            console.log('you win!')
         }
-        if(playerSelection == "scissors"){
-            if(computerSelection == "Rock"){
-                console.log("you lose!")
-            }else{
-                console.log("you win!")
-            }
-    
-        }
-    }}
-  let playerSelection = prompt("type");
-  const computerSelection = getComputerChoice();
-  console.log(computerSelection);
-
-  console.log(playRound(playerSelection, computerSelection));
+    }
+    }
+const playerSelection = prompt('enter a choice: ').toLowerCase();
+const computerSelection = getComputerChoice();
+console.log(computerSelection);
+console.log(playRound(playerSelection, computerSelection));
