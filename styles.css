@@ -1,0 +1,27 @@
+body{
+	font-family: sans-serif;
+}
+h1{
+	text-align: center;
+}
+#game{
+	width: 500px;
+	margin: 0 auto;
+}
+#player{
+	display: flex;
+	justify-content: space-around;
+}
+button{
+	width: 100px;
+	height: 100px;
+	background-color: #ccc;
+	border: none;
+	cursor: pointer;
+}
+p#computerChoice{
+	font-size: 18px;
+}
+p#resultText{
+	font-size: 24px;
+}

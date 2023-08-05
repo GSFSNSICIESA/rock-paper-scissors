@@ -1,43 +1,48 @@
-let choices = ['rock', 'paper', 'scissors'];
-function getComputerChoice(){
-    computerChoice = choices[Math.floor(Math.random()*3)];
-    return computerChoice;    
+const playerChoice = document.getElementById("player");
+const computerChoice = document.getElementById("computerChoice");
+const resultText = document.getElementById("resultText");
+
+const randomNumber = Math.floor(Math.random() * 3) + 1;
+
+function getComputerChoice() {
+  switch (randomNumber) {
+    case 1:
+      computerChoice.innerHTML = "Rock";
+      break;
+    case 2:
+      computerChoice.innerHTML = "Paper";
+      break;
+    case 3:
+      computerChoice.innerHTML = "Scissors";
+      break;
+  }
 }
-function game(){
 
-        function playRound(playerSelection, computerSelection){
-            if(playerSelection == computerSelection){
-                console.log('draw')
-            }else if(playerSelection == 'rock'){
-        
-                    if(computerSelection == 'paper'){
-                        console.log('you lose!')
-                    }else{
-                        console.log('you win!')
-                    }
-            }else if(playerSelection == 'paper'){
-                if(computerSelection== 'scissors'){
-                    console.log('you lose!');
-        
-                }else{
-                    console.log('you win!')
-                }
-                
-            }else if (playerSelection =='scissors'){
-                if (computerSelection == "rock"){
-                    console.log('you lose!')
-                }else{
-                    console.log('you win!')
-                }
-            }
-            }
-        const playerSelection = 'rock';
-        const computerSelection = getComputerChoice();
-        console.log(computerSelection);
-        console.log(playRound(playerSelection, computerSelection));
-                
+function getResult() {
+  switch (playerChoice.innerHTML) {
+    case "Rock":
+      if (randomNumber === 3) {
+        resultText.innerHTML = "You win!";
+      } else {
+        resultText.innerHTML = "You lose!";
+      }
+      break;
+    case "Paper":
+      if (randomNumber === 1) {
+        resultText.innerHTML = "You win!";
+      } else {
+        resultText.innerHTML = "You lose!";
+      }
+      break;
+    case "Scissors":
+      if (randomNumber === 2) {
+        resultText.innerHTML = "You win!";
+      } else {
+        resultText.innerHTML = "You lose!";
+      }
+      break;
+  }
+}
 
-    }
-
-game();
-
+playerChoice.addEventListener("click", getResult);
+getComputerChoice();
